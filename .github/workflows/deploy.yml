@@ -24,8 +24,8 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build
-      - name: List output
-        run: ls -la .output/public/ 2>/dev/null || ls -la dist/ 2>/dev/null || ls -la .vinxi/ 2>/dev/null || echo "No standard dir found"
+      - name: Copy landing page to output
+        run: cp index.html .output/public/
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
